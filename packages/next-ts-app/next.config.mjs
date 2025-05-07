@@ -9,6 +9,7 @@ export default stencilSSR({
   from: "react-library",
   hydrateModule: import("stencil-library/hydrate"),
   serializeShadowRoot: {
+    scoped: ["other-component"],
     default: "declarative-shadow-dom",
   },
 })(nextConfig);

@@ -11,6 +11,7 @@ import type { StencilReactComponent } from '@stencil/react-output-target/runtime
 import { createComponent } from '@stencil/react-output-target/runtime';
 import React from 'react';
 import { MyComponent as MyComponentElement, defineCustomElement as defineMyComponent } from "stencil-library/dist/components/my-component.js";
+import { OtherComponent as OtherComponentElement, defineCustomElement as defineOtherComponent } from "stencil-library/dist/components/other-component.js";
 
 export type MyComponentEvents = NonNullable<unknown>;
 
@@ -21,4 +22,15 @@ export const MyComponent: StencilReactComponent<MyComponentElement, MyComponentE
     react: React,
     events: {} as MyComponentEvents,
     defineCustomElement: defineMyComponent
+});
+
+export type OtherComponentEvents = NonNullable<unknown>;
+
+export const OtherComponent: StencilReactComponent<OtherComponentElement, OtherComponentEvents> = /*@__PURE__*/ createComponent<OtherComponentElement, OtherComponentEvents>({
+    tagName: 'other-component',
+    elementClass: OtherComponentElement,
+    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
+    react: React,
+    events: {} as OtherComponentEvents,
+    defineCustomElement: defineOtherComponent
 });
