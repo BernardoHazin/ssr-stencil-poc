@@ -1,0 +1,31 @@
+{
+  "name": "react-library",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "author": "bernardo.hazin <bernardo.hazin@gmail.com>",
+  "license": "ISC",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "node": "./dist/components.server.js",
+      "import": "./dist/index.js"
+    },
+    "./server": {
+      "types": "./dist/components.server.d.ts",
+      "import": "./dist/components.server.js"
+    }
+  },
+  "scripts": {
+    "test": "node ./__tests__/react-library.test.js",
+    "build": "npm run tsc",
+    "tsc": "tsc -p . --outDir ./dist"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@stencil/react-output-target": "^1.0.2",
+    "stencil-library": "*"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "name": "root",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "lerna run build --ignore next-ts-app",
+    "start": "lerna run start",
+    "test": "lerna run test",
+    "dev": "lerna run dev",
+    "clean": "lerna clean"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.5",
+    "esbuild": "^0.25.4",
+    "lerna": "^8.2.2",
+    "typescript": "^5.8.3"
+  }
+}
